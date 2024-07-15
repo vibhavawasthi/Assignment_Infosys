@@ -29,6 +29,9 @@ npm install
 **Start the server**
 npm start
 
+**Testing**
+
+For testing the data can be manipulated and multiple values can be changed from /public/transactionData.json file.
 
 Contact
 Your Name - vibhavawasthi54@gmail.com
