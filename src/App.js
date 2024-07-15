@@ -60,7 +60,7 @@ const RewardPointsCalculator = () => {
             <tr key={transaction.transactionId}>
               <td>{transaction.customerId}</td>
               <td>{transaction.transactionId}</td>
-              <td>${transaction.amountSpent.toFixed(2)}</td> {/* Format amount as currency */}
+              <td>${transaction.amountSpent.toFixed(2)}</td> 
               <td>{transaction.points}</td>
             </tr>
           ))}
