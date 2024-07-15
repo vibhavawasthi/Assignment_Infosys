@@ -20,13 +20,13 @@ npm install npm@latest -g
 
 A step by step series of examples that tell you how to get a development environment running:
 
-Clone the repo
-git clone https://github.com/your_username_/Project-Name.git
+**Clone the repo**
+git clone https://github.com/vibhavawasthi/Assignment_Infosys.git
 
-Install NPM packages
+**Install NPM packages**
 npm install
 
-Start the server
+**Start the server**
 npm start
 
 
