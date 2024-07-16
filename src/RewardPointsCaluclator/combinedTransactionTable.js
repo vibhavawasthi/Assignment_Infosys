@@ -1,3 +1,5 @@
+//combined 3 months point customer wise
+
 import React from 'react';
  
 const CombinedTransactionTable = ({ transactions }) => {

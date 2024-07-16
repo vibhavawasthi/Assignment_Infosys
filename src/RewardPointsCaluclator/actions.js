@@ -1,3 +1,5 @@
+//Asynchronous api call
+
 const FetchTransactions = async () => {
   const response = await fetch('/transactionData.json');
   if (!response.ok) {

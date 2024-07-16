@@ -1,3 +1,5 @@
+// Driver file for complete functionality
+
 import React, { useState, useEffect } from 'react';
 import fetchTransactions from './actions';
 import TransactionTable from './transactionTable';
@@ -8,6 +10,8 @@ const RewardPointsCalculator = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
  
+
+  // making the action/api call through
   useEffect(() => {
     const getTransactions = async () => {
       try {
@@ -24,7 +28,7 @@ const RewardPointsCalculator = () => {
   }, []);
  
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
+  if (error) return <p className='error'>{error}</p>;
  
   return (
     <div className="container">

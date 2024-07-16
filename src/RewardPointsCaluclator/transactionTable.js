@@ -1,3 +1,5 @@
+// month wise transaction display and point calculation
+
 import React from 'react';
  
 const TransactionTable = ({ transactions, month }) => {
