@@ -1,22 +1,38 @@
 [
-  { "customerId": 1, "transactionId": 101, "amountSpent": 120 },
-  { "customerId": 2, "transactionId": 102, "amountSpent": 80 },
-  { "customerId": 3, "transactionId": 103, "amountSpent": 60 },
-  { "customerId": 4, "transactionId": 104, "amountSpent": 150 },
-  { "customerId": 5, "transactionId": 105, "amountSpent": 90 },
-  { "customerId": 6, "transactionId": 106, "amountSpent": 200 },
-  { "customerId": 7, "transactionId": 107, "amountSpent": 55 },
-  { "customerId": 8, "transactionId": 108, "amountSpent": 105 },
-  { "customerId": 9, "transactionId": 109, "amountSpent": 130 },
-  { "customerId": 10, "transactionId": 110, "amountSpent": 70 },
-  { "customerId": 11, "transactionId": 111, "amountSpent": 85 },
-  { "customerId": 12, "transactionId": 112, "amountSpent": 95 },
-  { "customerId": 13, "transactionId": 113, "amountSpent": 110 },
-  { "customerId": 14, "transactionId": 114, "amountSpent": 75 },
-  { "customerId": 15, "transactionId": 115, "amountSpent": 165 },
-  { "customerId": 16, "transactionId": 116, "amountSpent": 140 },
-  { "customerId": 17, "transactionId": 117, "amountSpent": 50 },
-  { "customerId": 18, "transactionId": 118, "amountSpent": 180 },
-  { "customerId": 19, "transactionId": 119, "amountSpent": 125 },
-  { "customerId": 20, "transactionId": 120, "amountSpent": 95 }
+  {
+    "transactionId": "1",
+    "customerId": "C1",
+    "amountSpent": 120.00,
+    "transactionDate": "2024-04-15"
+  },
+  {
+    "transactionId": "2",
+    "customerId": "C1",
+    "amountSpent": 75.00,
+    "transactionDate": "2024-04-20"
+  },
+  {
+    "transactionId": "3",
+    "customerId": "C1",
+    "amountSpent": 60.00,
+    "transactionDate": "2024-05-05"
+  },
+  {
+    "transactionId": "4",
+    "customerId": "C2",
+    "amountSpent": 200.00,
+    "transactionDate": "2024-04-10"
+  },
+  {
+    "transactionId": "5",
+    "customerId": "C2",
+    "amountSpent": 30.00,
+    "transactionDate": "2024-05-15"
+  },
+  {
+    "transactionId": "6",
+    "customerId": "C2",
+    "amountSpent": 110.00,
+    "transactionDate": "2024-06-05"
+  }
 ]
