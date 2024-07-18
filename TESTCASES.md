@@ -10,10 +10,9 @@
       Objective: Ensure that the transaction data is fetched correctly from the JSON file. 
 
       Steps: 
-
-      Launch the application. 
-
-      Verify that the application attempts to fetch the data from `transactionData.json`. 
+      Launch the application. 
+      
+      Verify that the application attempts to fetch the data from `transactionData.json`. 
 
       Expected Result: The transaction data should be successfully fetched without errors. 
 
@@ -27,8 +26,10 @@
 
  
 
-                                   Test Case 2: Calculating Points for a Single Transaction 
-
+                                   
+                                   
+                                   
+                                   **Test Case 2: Calculating Points for a Single Transaction**
       Test ID: TC02 
 
       Test Name: Calculate Points for Single Transaction 
