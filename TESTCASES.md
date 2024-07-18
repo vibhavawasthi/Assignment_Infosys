@@ -29,7 +29,7 @@
                                    
                                    
                                    
-                                   **Test Case 2: Calculating Points for a Single Transaction**
+                                   Test Case 2: Calculating Points for a Single Transaction
       Test ID: TC02 
 
       Test Name: Calculate Points for Single Transaction 
@@ -37,12 +37,10 @@
       Objective: Ensure that reward points are calculated correctly for a single transaction. 
 
       Steps: 
-
-  1. Provide a sample transaction amount (e.g., $120). 
-
-  2. Calculate the points manually: (120-100) * 2 + 50 = 90 points. 
-
-  3. Verify the application's calculation. 
+      
+      1.Provide a sample transaction amount (e.g., $120). 
+      2.Calculate the points manually: (120-100) * 2 + 50 = 90 points. 
+      3.Verify the application's calculation. 
 
       Expected Result: The calculated points should match the manual calculation. 
 
@@ -65,12 +63,9 @@
       Objective: Ensure that reward points are calculated correctly for multiple transactions and grouped by customer and month. 
 
       Steps: 
-
-  1. Provide multiple sample transactions for different customers and months. 
-
-  2. Calculate the points manually for each transaction and sum them up by customer and month. 
-
-  3. Verify the application's calculation. 
+      1.Provide multiple sample transactions for different customers and months. 
+      2.Calculate the points manually for each transaction and sum them up by customer and month. 
+      3.Verify the application's calculation. 
 
       Expected Result: The calculated points for each customer and month should match the manual calculations. 
 
@@ -97,10 +92,8 @@
       Objective: Ensure that transactions are displayed correctly in the table with all details. 
 
       Steps: 
-
-  1. Provide sample transaction data. 
-
-  2. Verify that the table displays transaction ID, customer ID, amount spent, transaction date, and points correctly. 
+      Provide sample transaction data. 
+      Verify that the table displays transaction ID, customer ID, amount spent, transaction date, and points correctly. 
 
       Expected Result: The table should display all transaction details correctly. 
 
@@ -129,12 +122,9 @@
       Objective: Ensure that the monthly and combined points are displayed correctly for each customer. 
 
       Steps: 
-
-  1. Provide sample transaction data. 
-
-  2. Verify that the application displays separate tables for each month and a combined table for all three months. 
-
-  3. Verify the points in each table. 
+      Provide sample transaction data. 
+      Verify that the application displays separate tables for each month and a combined table for all three months. 
+      Verify the points in each table. 
 
       Expected Result: The monthly and combined points should be displayed correctly for each customer. 
 
@@ -143,4 +133,4 @@
       Status: Pass 
 
  
-**
+
