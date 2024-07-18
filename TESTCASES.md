@@ -11,9 +11,9 @@
 
       Steps: 
 
-  1. Launch the application. 
+      Launch the application. 
 
-  2. Verify that the application attempts to fetch the data from `transactionData.json`. 
+      Verify that the application attempts to fetch the data from `transactionData.json`. 
 
       Expected Result: The transaction data should be successfully fetched without errors. 
 
@@ -142,3 +142,4 @@
       Status: Pass 
 
  
+**
