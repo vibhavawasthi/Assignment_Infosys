@@ -31,16 +31,40 @@ npm start
 
 **Testing**
 
-The below link can be followed for test cases.
+The test cases are mentioned in TESTCASES.md and UNITTESTCASES.md file in the repo
 
-[https://infosystechnologies-my.sharepoint.com/:w:/g/personal/vibhav_awasthi_ad_infosys_com/EX8P_W2gQI1Ah7BA_TnP_noBPd1KuXWjgGRXEdh0G7PYAg?e=jLaNPz ](url)
+Working Screenshot:-
+https://drive.google.com/file/d/1CJcLKUjFw5JWNLFj63nFURECJAsiPe-q/view?usp=drivesdk
+
+Error Screenshot:-
+
+https://drive.google.com/file/d/1CJK3i4V-wZUPkst3KuOmnIfPxOsbs4Cp/view?usp=drivesdk
+20240718_170338.jpg
+ 
 
 **Flow Diagram**
 
-The below link can be followed for flow diagram.
+https://drive.google.com/file/d/1CJqXOA0MNgqJiPn_l3-BgXZLNo4kwUdj/view?usp=drivesdk
 
-[https://infosystechnologies-my.sharepoint.com/:w:/g/personal/vibhav_awasthi_ad_infosys_com/ETxKMqU8Ic9NggdRHWCE4hgBOqpP-SHjFf3apRbtGz7bZw?e=87m3yT
-](url)
+                               Detailed Flow Explanation 
+
+  
+
+1.     Start: The user launches the application. 
+
+2.     Load Application: The application initializes and prepares to fetch data. 
+
+3.     Fetch Transactions Data: The application fetches transaction data from    `transactionData.json`. 
+
+4.     Calculate Points for Each Transaction: For each transaction, the application calculates the reward points based on the amount spent. 
+
+5.     Group Transactions by Customer and Month/Total: The application groups the transactions by customer and calculates the monthly and total points. 
+
+6.     Display Monthly Tables and Combined Points Table: The application displays the transactions in separate tables for each month and a combined table showing the total points for each customer. 
+
+7.     End: The application finishes the process and waits for any user interactions. 
+
+
 
 Contact
 Your Name - vibhavawasthi54@gmail.com
