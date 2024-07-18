@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import fetchTransactions from '../Utils/apiServices';
+const { fetchTransactions } = require('../Utils/apiServices');
 import { processTransactions } from './calculatePoints';
 import TransactionTable from './transactionTable';
 import CombinedTransactionTable from './combinedTransactionTable';
@@ -11,6 +11,7 @@ const RewardPointsCalculator = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
  
+  //api call
   useEffect(() => {
     const getTransactions = async () => {
       try {
@@ -30,7 +31,7 @@ const RewardPointsCalculator = () => {
     getTransactions();
   }, []);
  
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className='loader'>Loading...</p>;
   if (error) return <p className='error'>{error}</p>;
  
   return (
