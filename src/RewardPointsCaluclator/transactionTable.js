@@ -1,32 +1,32 @@
-// month wise transaction display and point calculation
-
 import React from 'react';
  
 const TransactionTable = ({ transactions, month }) => {
+  const filteredTransactions = transactions
+    .flatMap((customer) => customer.monthlyPoints)
+    .filter((transaction) => transaction.month === month);
+ 
   return (
-    <table className='transaction-table'>
+    <table>
       <thead>
         <tr>
-          <th>Transaction ID</th>
           <th>Customer ID</th>
+          <th>Customer Name</th>
+          <th>Transaction ID</th>
           <th>Amount Spent</th>
           <th>Transaction Date</th>
           <th>Points</th>
         </tr>
       </thead>
       <tbody>
-        {transactions.map((transaction) => (
-          transaction.monthlyPoints.map((monthly) => (
-            monthly.month === month && monthly.transactions.map((trans) => (
-              <tr key={trans.transactionId}>
-                <td>{trans.transactionId}</td>
-                <td>{trans.customerId}</td>
-                <td>${trans.amountSpent.toFixed(2)}</td>
-                <td>{trans.transactionDate}</td>
-                <td>{trans.points}</td>
-              </tr>
-            ))
-          ))
+        {filteredTransactions.map((transaction) => (
+          <tr key={`${transaction.customerId}-${transaction.month}`}>
+            <td>{transaction.customerId}</td>
+            <td>{transaction.customerName}</td>
+            <td>{transaction.transactions.map((t) => t.transactionId).join(', ')}</td>
+            <td>{transaction.transactions.map((t) => `$${t.amountSpent.toFixed(2)}`).join(', ')}</td>
+            <td>{transaction.transactions.map((t) => t.transactionDate).join(', ')}</td>
+            <td>{transaction.points}</td>
+          </tr>
         ))}
       </tbody>
     </table>

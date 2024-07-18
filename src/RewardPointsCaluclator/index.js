@@ -1,25 +1,26 @@
-// Driver file for complete functionality
-
 import React, { useState, useEffect } from 'react';
-import fetchTransactions from './actions';
+import fetchTransactions from '../Utils/apiServices';
+import { processTransactions } from './calculatePoints';
 import TransactionTable from './transactionTable';
 import CombinedTransactionTable from './combinedTransactionTable';
-import logger from '../logger';
+import logger from 'loglevel';
+
  
 const RewardPointsCalculator = () => {
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
- // action/api call
+ 
   useEffect(() => {
     const getTransactions = async () => {
       try {
         const data = await fetchTransactions();
-        logger.debug('Fetched transactions:', data);  //logger implemented
-        setTransactions(data);
+        logger.debug('Fetched transactions:', data);
+        const processedData = processTransactions(data);
+        logger.debug('Processed transactions:', processedData);
+        setTransactions(processedData);
       } catch (error) {
-        logger.error('Failed to load transactions:', error); //logger implemented
+        logger.error('Failed to load transactions:', error);
         setError('Failed to load transactions.');
       } finally {
         setLoading(false);
@@ -30,7 +31,7 @@ const RewardPointsCalculator = () => {
   }, []);
  
   if (loading) return <p>Loading...</p>;
-  if (error) return <p className='error'>{error}</p>;
+  if (error) return <p>{error}</p>;
  
   return (
     <div className="container">

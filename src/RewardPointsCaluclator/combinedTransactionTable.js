@@ -1,21 +1,21 @@
-//combined 3 months point customer wise
-
 import React from 'react';
  
 const CombinedTransactionTable = ({ transactions }) => {
   return (
-    <table className='transaction-table'>
+    <table>
       <thead>
         <tr>
           <th>Customer ID</th>
+          <th>Customer Name</th>
           <th>Total Points</th>
         </tr>
       </thead>
       <tbody>
-        {transactions.map((transaction) => (
-          <tr key={transaction.customerId}>
-            <td>{transaction.customerId}</td>
-            <td>{transaction.totalPoints}</td>
+        {transactions.map((customer) => (
+          <tr key={customer.customerId}>
+            <td>{customer.customerId}</td>
+            <td>{customer.customerName}</td>
+            <td>{customer.totalPoints}</td>
           </tr>
         ))}
       </tbody>

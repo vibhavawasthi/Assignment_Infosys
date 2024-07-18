@@ -1,38 +1,44 @@
 [
   {
-    "transactionId": "1",
-    "customerId": "C1",
-    "amountSpent": 120.00,
-    "transactionDate": "2024-04-15"
+    "transactionId": "T001",
+    "customerId": "C001",
+    "customerName": "John Doe",
+    "amountSpent": 120,
+    "transactionDate": "2023-04-15"
   },
   {
-    "transactionId": "2",
-    "customerId": "C1",
-    "amountSpent": 75.00,
-    "transactionDate": "2024-04-20"
+    "transactionId": "T002",
+    "customerId": "C002",
+    "customerName": "Jane Smith",
+    "amountSpent": 75,
+    "transactionDate": "2023-04-16"
   },
   {
-    "transactionId": "3",
-    "customerId": "C1",
-    "amountSpent": 60.00,
-    "transactionDate": "2024-05-05"
+    "transactionId": "T003",
+    "customerId": "C001",
+    "customerName": "John Doe",
+    "amountSpent": 150,
+    "transactionDate": "2023-05-01"
   },
   {
-    "transactionId": "4",
-    "customerId": "C2",
-    "amountSpent": 200.00,
-    "transactionDate": "2024-04-10"
+    "transactionId": "T004",
+    "customerId": "C002",
+    "customerName": "Jane Smith",
+    "amountSpent": 200,
+    "transactionDate": "2023-05-05"
   },
   {
-    "transactionId": "5",
-    "customerId": "C2",
-    "amountSpent": 30.00,
-    "transactionDate": "2024-05-15"
+    "transactionId": "T005",
+    "customerId": "C001",
+    "customerName": "John Doe",
+    "amountSpent": 90,
+    "transactionDate": "2023-06-07"
   },
   {
-    "transactionId": "6",
-    "customerId": "C2",
-    "amountSpent": 110.00,
-    "transactionDate": "2024-06-05"
+    "transactionId": "T006",
+    "customerId": "C002",
+    "customerName": "Jane Smith",
+    "amountSpent": 300,
+    "transactionDate": "2023-06-10"
   }
 ]
