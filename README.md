@@ -29,17 +29,16 @@ npm install
 **Start the server**
 npm start
 
-**Testing**
+Test Cases jest scripts can be found in src/RewardPointsCalculator/_tests_/testCases.test.js
+Manual Test Cases are present in TESTCASE.MD and UNITTESTCASE.md
 
-The test cases are mentioned in TESTCASES.md and UNITTESTCASES.md file in the repo
+**Run Test Cases**
 
-Working Screenshot:-
-https://drive.google.com/file/d/1CJcLKUjFw5JWNLFj63nFURECJAsiPe-q/view?usp=drivesdk
+npm test
 
-Error Screenshot:-
+Screenshots (Working, Test Cases Passed, Error, Loading)
 
-https://drive.google.com/file/d/1CJK3i4V-wZUPkst3KuOmnIfPxOsbs4Cp/view?usp=drivesdk
-20240718_170338.jpg
+https://docs.google.com/document/d/1bjMHPPt7LPeWcE33H_B8auf6fZRcL8MkLmPghZzWSOo/edit?usp=drivesdk
  
 
 **Flow Diagram**
