@@ -16,19 +16,16 @@ Given a record of every transaction during a three month period, calculate the r
 
 ### Clone the project from github repository
 
-`https://github.com/suman-saurabh-das/reward-calculator.git`
+`https://github.com/vibhavawasthi/Assignment_Infosys`
 
 ### Install the dependencies
 
 `npm install`
 
-### Start the json-server
-
-`npx json-server --watch ./src/data/db.json --port 8000`
 
 ### Run the app in development mode.
 
-`npm run start`
+`npm start`
 
 ### Launch the test runner in interactive watch mode.
 
@@ -58,12 +55,6 @@ To modify the json-server data, make changes to the file in src/data/db.json
 
 ![App Screenshot](https://drive.google.com/uc?export=view&id=1VxYfhT1tN5fi5FJeSVEUsLcvs91Zd08w)
 
-## Approach
-
-- Step 1 - Fetch the data using axios from static server.
-- Step 2 - Calculate the points for given transactions for last 3 months.
-- Step 3 - Display the data in tabular format.
-
 ## Credits
 List of contributors:
-- [Saurabh Das - Developer](dsumansaurabh@gmail.com)
+- [Vibhav Awasthi - Developer](vibhavawasthi54@gmail.com)
