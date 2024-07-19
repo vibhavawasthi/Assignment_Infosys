@@ -81,7 +81,7 @@ calculatePoints function
 
 ### Application running state
 
-![App Screenshot](https://drive.google.com/uc?export=view&id=1C_RxqeFUQLhQVmsxCMaXyUSUiajzQk4b)
+![App Screenshot](https://drive.google.com/uc?export=view&id=1CaEhL5LDnktUFLKAWHCudrsk9r4RtNzw)
 
 ### Application error 
 
