@@ -45,15 +45,19 @@ Given a record of every transaction during a three month period, calculate the r
 
 ![App Screenshot](https://drive.google.com/uc?export=view&id=1CJcLKUjFw5JWNLFj63nFURECJAsiPe-q)
 
-### Application network error (If JSON server is not running)
+### Application error 
 
 ![App Screenshot](https://drive.google.com/uc?export=view&id=1CJK3i4V-wZUPkst3KuOmnIfPxOsbs4Cp)
 
 ## Sample data
 
-To modify the json-server data, make changes to the file in src/data/db.json
+To modify the json-server data, make changes to the file in public/transactionData.json
 
-![App Screenshot](https://drive.google.com/uc?export=view&id=1VxYfhT1tN5fi5FJeSVEUsLcvs91Zd08w)
+![App Screenshot](https://drive.google.com/uc?export=view&id=1CY0lBi8fnFGDIzDXpS4MTzrvce_f5qt7)
+
+### Flow Diagram
+![App Screenshot](https://drive.google.com/uc?export=view&id=1CJqXOA0MNgqJiPn_l3-BgXZL)
+
 
 ## Credits
 List of contributors:
