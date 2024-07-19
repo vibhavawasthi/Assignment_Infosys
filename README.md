@@ -31,6 +31,35 @@ Given a record of every transaction during a three month period, calculate the r
 
 `npm test`
 
+And has passed below test cases
+
+![App Screenshot](https://drive.google.com/uc?export=view&id=1CZIKCdSkbK_JWnV6N625xHQ5Pxr4NqRN)
+calculatePoints function
+    ✓ should handle negative amount
+    ✓ should handle decimal amount
+    ✓ should handle large amount like 1,000,000
+    ✓ should calculate points correctly for amount over $100 (2 ms)
+    ✓ should calculate points correctly for amount between $50 and $100
+    ✓ should calculate points correctly for amount exactly $50
+    ✓ should handle amount less than $50
+    
+  processTransactions function
+    ✓ should process transactions and calculate points correctly (1 ms)
+    ✓ should handle empty transactions array
+  fetchTransactions
+    ✓ should fetch transaction data successfully (1 ms)
+    ✓ should handle 404 error (49 ms)
+    ✓ should handle 500 error (3 ms)
+    ✓ should handle other fetch errors (2 ms)
+    ✓ should handle network errors (3 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       14 passed, 14 total
+Snapshots:   0 total
+Time:        0.779 s
+
+
+
 ### Build the app for production to the `build` folder.
 
 `npm run build`
