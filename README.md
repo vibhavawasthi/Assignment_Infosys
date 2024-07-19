@@ -28,7 +28,7 @@ Given a record of every transaction during a three month period, calculate the r
 
 `npm start`
 
-### Launch the test runner in interactive watch mode.
+### Launch the test runner.
 
 `npm test`
 
