@@ -39,7 +39,7 @@ Given a record of every transaction during a three month period, calculate the r
 
 ### Application loading state
 
-![App Screenshot](https://drive.google.com/uc?export=view&id=1T7Z-shaSDCPgOlTWu9ob5lcv1GIrw88y)
+![App Screenshot](https://drive.google.com/uc?export=view&id=1CXG2PUsm6eicVFmwou_jnrWUKabu6lQN)
 
 ### Application running state
 
