@@ -99,4 +99,4 @@ To modify the json-server data, make changes to the file in public/transactionDa
 
 ## Credits
 List of contributors:
-- [Vibhav Awasthi - Developer](vibhavawasthi54@gmail.com)
+- Vibhav Awasthi - Developer (vibhavawasthi54@gmail.com)
