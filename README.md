@@ -75,13 +75,14 @@ calculatePoints function
 
 ## Screen shots of application
 
+### Application running state
+
+![App Screenshot](https://drive.google.com/uc?export=view&id=1CaEhL5LDnktUFLKAWHCudrsk9r4RtNzw)
+
 ### Application loading state
 
 ![App Screenshot](https://drive.google.com/uc?export=view&id=1CXG2PUsm6eicVFmwou_jnrWUKabu6lQN)
 
-### Application running state
-
-![App Screenshot](https://drive.google.com/uc?export=view&id=1CaEhL5LDnktUFLKAWHCudrsk9r4RtNzw)
 
 ### Application error 
 
