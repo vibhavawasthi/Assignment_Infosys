@@ -14,6 +14,7 @@ const TransactionTable = ({ transactions, month }) => {
           <th>Transaction ID</th>
           <th>Amount Spent</th>
           <th>Transaction Date</th>
+          <th>Transaction Year</th>
           <th>Points</th>
         </tr>
       </thead>
@@ -25,6 +26,7 @@ const TransactionTable = ({ transactions, month }) => {
             <td>{transaction.transactions.map((t) => t.transactionId).join(', ')}</td>
             <td>{transaction.transactions.map((t) => `$${t.amountSpent.toFixed(2)}`).join(', ')}</td>
             <td>{transaction.transactions.map((t) => t.transactionDate).join(', ')}</td>
+            <td>{transaction.transactions.map((t) => t.transactionDate.substring(0,4))}</td>
             <td>{transaction.points}</td>
           </tr>
         ))}

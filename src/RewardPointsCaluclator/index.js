@@ -43,7 +43,7 @@ const RewardPointsCalculator = () => {
       <TransactionTable transactions={transactions} month={5} />
       <h3>June</h3>
       <TransactionTable transactions={transactions} month={6} />
-      <h3>Combined Points for 3 Months</h3>
+      <h3>Combined points for 3 months for years 2021, 2022, 2023</h3>
       <CombinedTransactionTable transactions={transactions} />
     </div>
   );

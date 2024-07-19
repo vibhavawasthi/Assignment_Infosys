@@ -4,7 +4,14 @@
     "customerId": "C001",
     "customerName": "John Doe",
     "amountSpent": 120,
-    "transactionDate": "2023-04-15"
+    "transactionDate": "2021-04-15"
+  },
+  {
+    "transactionId": "T007",
+    "customerId": "C001",
+    "customerName": "John Doe",
+    "amountSpent": 120,
+    "transactionDate": "2022-04-15"
   },
   {
     "transactionId": "T002",
@@ -12,6 +19,13 @@
     "customerName": "Jane Smith",
     "amountSpent": 75,
     "transactionDate": "2023-04-16"
+  },
+  {
+    "transactionId": "T003",
+    "customerId": "C001",
+    "customerName": "John Doe",
+    "amountSpent": 150,
+    "transactionDate": "2022-05-01"
   },
   {
     "transactionId": "T003",
