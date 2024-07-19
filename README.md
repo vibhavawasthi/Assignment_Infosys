@@ -53,7 +53,7 @@ Given a record of every transaction during a three month period, calculate the r
 
 To modify the json-server data, make changes to the file in public/transactionData.json
 
-![App Screenshot](https://drive.google.com/uc?export=view&id=1CY0lBi8fnFGDIzDXpS4MTzrvce_f5qt7)
+![App Screenshot](https://drive.google.com/uc?export=view&id=1CYKnDIsR95MlILzmpQgy6Lg6nTcukI6H)
 
 ### Flow Diagram
 ![App Screenshot](https://drive.google.com/uc?export=view&id=1CJqXOA0MNgqJiPn_l3-BgXZLNo4kwUdj)
