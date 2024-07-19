@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-const { fetchTransactions } = require('../Utils/apiServices');
-import { processTransactions } from './calculatePoints';
-import TransactionTable from './transactionTable';
-import CombinedTransactionTable from './combinedTransactionTable';
+const { fetchTransactions } = require('../utils/services/apiServices');
+import { processTransactions } from '../utils/helperFunctions/calculatePoints';
+import TransactionTable from '../components/tableLayouts/transactionTable';
+import CombinedTransactionTable from '../components/tableLayouts/combinedTransactionTable';
 import logger from 'loglevel';
 
  
