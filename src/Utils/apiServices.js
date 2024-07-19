@@ -18,7 +18,6 @@ const fetchTransactions = async () => {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error('Fetch error:', error.message);
     throw error; // Re-throw the error to propagate it further if needed
   }
 };

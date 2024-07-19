@@ -1,5 +1,5 @@
 import React from 'react';
-import RewardPointsCalculator from './RewardPointsCaluclator';
+import RewardPointsCalculator from './RewardPointsCaluclator/main';
 import './styles.css';
 
  
