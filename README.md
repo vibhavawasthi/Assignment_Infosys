@@ -1,75 +1,69 @@
-**Assignment for Infosys**
+# Reward points calculator
 
-This is a basic React.js project to calculate reward points as per the required calculation provided.
+Project created using [Create React App](https://github.com/facebook/create-react-app).
 
-**Getting Started**
+## Problem statement
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+A retailer offers a rewards program to its customers, awarding points based on each recorded purchase.  
 
-**Prerequisites**
+A customer receives 2 points for every dollar spent over $100 in each transaction, plus 1 point for every dollar spent between $50 and $100 in each transaction. 
 
-What things you need to install the software and how to install them:
-
-- Node.js
-- npm
-
-```bash
-npm install npm@latest -g
-
-**Installing**
-
-A step by step series of examples that tell you how to get a development environment running:
-
-**Clone the repo**
-git clone https://github.com/vibhavawasthi/Assignment_Infosys.git
-
-**Install NPM packages**
-npm install
-
-**Start the server**
-npm start
-
-Test Cases jest scripts can be found in src/RewardPointsCalculator/_tests_/testCases.test.js
-Manual Test Cases are present in TESTCASE.MD and UNITTESTCASE.md
-
-**Run Test Cases**
-
-npm test
-
-![App Screenshot](https://drive.google.com/file/d/1CJcLKUjFw5JWNLFj63nFURECJAsiPe-q/view?usp=drivesdk)
-
-Error Screenshot:-
-
-https://docs.google.com/document/d/1bjMHPPt7LPeWcE33H_B8auf6fZRcL8MkLmPghZzWSOo/edit?usp=drivesdk
- 
-
-**Flow Diagram**
-
-https://drive.google.com/file/d/1CJqXOA0MNgqJiPn_l3-BgXZLNo4kwUdj/view?usp=drivesdk
-
-                               Detailed Flow Explanation 
-
+(e.g. a $120 purchase = 2x$20 + 1x$50 = 90 points). 
   
+Given a record of every transaction during a three month period, calculate the reward points earned for each customer per month and total. 
 
-1.     Start: The user launches the application. 
+## Running the project
 
-2.     Load Application: The application initializes and prepares to fetch data. 
+### Clone the project from github repository
 
-3.     Fetch Transactions Data: The application fetches transaction data from    `transactionData.json`. 
+`https://github.com/suman-saurabh-das/reward-calculator.git`
 
-4.     Calculate Points for Each Transaction: For each transaction, the application calculates the reward points based on the amount spent. 
+### Install the dependencies
 
-5.     Group Transactions by Customer and Month/Total: The application groups the transactions by customer and calculates the monthly and total points. 
+`npm install`
 
-6.     Display Monthly Tables and Combined Points Table: The application displays the transactions in separate tables for each month and a combined table showing the total points for each customer. 
+### Start the json-server
 
-7.     End: The application finishes the process and waits for any user interactions. 
+`npx json-server --watch ./src/data/db.json --port 8000`
 
+### Run the app in development mode.
 
+`npm run start`
 
-Contact
-Your Name - vibhavawasthi54@gmail.com
+### Launch the test runner in interactive watch mode.
 
-Project Link: (https://github.com/vibhavawasthi/Assignment_Infosys)
+`npm test`
 
+### Build the app for production to the `build` folder.
 
+`npm run build`
+
+## Screen shots of application
+
+### Application loading state
+
+![App Screenshot](https://drive.google.com/uc?export=view&id=1T7Z-shaSDCPgOlTWu9ob5lcv1GIrw88y)
+
+### Application running state
+
+![App Screenshot](https://drive.google.com/uc?export=view&id=1J-J4Bwq0-8k7-fX_Hgur782kXvAAaEtz)
+
+### Application network error (If JSON server is not running)
+
+![App Screenshot](https://drive.google.com/uc?export=view&id=1xjy9i4rnVtfZJtYa7DPXww2-1O63w05l)
+
+## Sample data
+
+To modify the json-server data, make changes to the file in src/data/db.json
+
+![App Screenshot](https://drive.google.com/uc?export=view&id=1VxYfhT1tN5fi5FJeSVEUsLcvs91Zd08w)
+
+## Approach
+
+- Step 1 - Fetch the data using axios from static server.
+- Step 2 - Calculate the points for given transactions for last 3 months.
+- Step 3 - Display the data in tabular format.
+
+## Credits
+List of contributors:
+- [Saurabh Das - Developer](dsumansaurabh@gmail.com)
