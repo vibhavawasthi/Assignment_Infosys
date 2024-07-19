@@ -31,7 +31,7 @@ const RewardPointsCalculator = () => {
     getTransactions();
   }, []);
  
-  if (loading) return <p className='loader'>Loading...</p>;
+  if (loading) return <p className='loader'></p>;
   if (error) return <p className='error'>{error}</p>;
  
   return (
