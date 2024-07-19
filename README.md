@@ -31,7 +31,9 @@ Given a record of every transaction during a three month period, calculate the r
 
 `npm test`
 
-And has passed below test cases
+The testcases file can be found in '/workspaces/Assign/src/RewardPointsCaluclator/_tests_/testCases.test.js'
+
+ The code has passed below test cases
 
 ![App Screenshot](https://drive.google.com/uc?export=view&id=1CZIKCdSkbK_JWnV6N625xHQ5Pxr4NqRN)
 calculatePoints function
