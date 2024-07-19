@@ -16,54 +16,90 @@ Given a record of every transaction during a three month period, calculate the r
 
 ### Clone the project from github repository
 
-`https://github.com/suman-saurabh-das/reward-calculator.git`
+`https://github.com/vibhavawasthi/Assignment_Infosys`
 
 ### Install the dependencies
 
 `npm install`
 
-### Start the json-server
-
-`npx json-server --watch ./src/data/db.json --port 8000`
+### Run the app in development mode.
 
 ### Run the app in development mode.
 
-`npm run start`
+`npm start`
 
 ### Launch the test runner in interactive watch mode.
 
 `npm test`
 
+The testcases file can be found in '/workspaces/Assign/src/RewardPointsCaluclator/_tests_/testCases.test.js'
+
+ The code has passed below test cases
+
+![App Screenshot](https://drive.google.com/uc?export=view&id=1CZIKCdSkbK_JWnV6N625xHQ5Pxr4NqRN)
+calculatePoints function
+
+    ✓ should handle negative amount
+    
+    ✓ should handle decimal amount
+    
+    ✓ should handle large amount like 1,000,000
+    
+    ✓ should calculate points correctly for amount over $100 (2 ms)
+    
+    ✓ should calculate points correctly for amount between $50 and $100
+
+    ✓ should calculate points correctly for amount exactly $50
+    
+    ✓ should handle amount less than $50
+    
+  processTransactions function
+  
+    ✓ should process transactions and calculate points correctly (1 ms)
+    
+    ✓ should handle empty transactions array
+  fetchTransactions
+  
+    ✓ should fetch transaction data successfully (1 ms)
+    
+    ✓ should handle 404 error (49 ms)
+    
+    ✓ should handle 500 error (3 ms)
+    
+    ✓ should handle other fetch errors (2 ms)
+    
+    ✓ should handle network errors (3 ms)
+    
 ### Build the app for production to the `build` folder.
 
 `npm run build`
 
 ## Screen shots of application
 
-### Application loading state
-
-![App Screenshot](https://drive.google.com/uc?export=view&id=1T7Z-shaSDCPgOlTWu9ob5lcv1GIrw88y)
-
 ### Application running state
 
-![App Screenshot](https://drive.google.com/uc?export=view&id=1J-J4Bwq0-8k7-fX_Hgur782kXvAAaEtz)
+![App Screenshot](https://drive.google.com/uc?export=view&id=1CaEhL5LDnktUFLKAWHCudrsk9r4RtNzw)
 
-### Application network error (If JSON server is not running)
+### Application loading state
 
-![App Screenshot](https://drive.google.com/uc?export=view&id=1xjy9i4rnVtfZJtYa7DPXww2-1O63w05l)
+![App Screenshot](https://drive.google.com/uc?export=view&id=1CXG2PUsm6eicVFmwou_jnrWUKabu6lQN)
+
+### Build the app for production to the `build` folder.
+
+### Application error 
+
+![App Screenshot](https://drive.google.com/uc?export=view&id=1CJK3i4V-wZUPkst3KuOmnIfPxOsbs4Cp)
 
 ## Sample data
 
-To modify the json-server data, make changes to the file in src/data/db.json
+To modify the json-server data, make changes to the file in public/transactionData.json
 
-![App Screenshot](https://drive.google.com/uc?export=view&id=1VxYfhT1tN5fi5FJeSVEUsLcvs91Zd08w)
+![App Screenshot](https://drive.google.com/uc?export=view&id=1CYKnDIsR95MlILzmpQgy6Lg6nTcukI6H)
 
-## Approach
+### Flow Diagram
+![App Screenshot](https://drive.google.com/uc?export=view&id=1CJqXOA0MNgqJiPn_l3-BgXZLNo4kwUdj)
 
-- Step 1 - Fetch the data using axios from static server.
-- Step 2 - Calculate the points for given transactions for last 3 months.
-- Step 3 - Display the data in tabular format.
 
 ## Credits
 List of contributors:
-- [Saurabh Das - Developer](dsumansaurabh@gmail.com)
+- Vibhav Awasthi - Developer (vibhavawasthi54@gmail.com)
