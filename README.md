@@ -43,7 +43,7 @@ Given a record of every transaction during a three month period, calculate the r
 
 ### Application running state
 
-![App Screenshot](https://drive.google.com/uc?export=view&id=1J-J4Bwq0-8k7-fX_Hgur782kXvAAaEtz)
+![App Screenshot](https://drive.google.com/uc?export=view&id=1CJcLKUjFw5JWNLFj63nFURECJAsiPe-q)
 
 ### Application network error (If JSON server is not running)
 
