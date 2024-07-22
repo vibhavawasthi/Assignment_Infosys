@@ -1,17 +1,46 @@
 import React, { useState, useEffect } from 'react';
-const { fetchTransactions } = require('../utils/services/apiServices');
+import { fetchTransactions } from '../utils/services/apiServices';
 import { processTransactions } from './helpers/calculatePoints';
 import TransactionTable from '../components/tableLayouts/transactionTable';
 import CombinedTransactionTable from '../components/tableLayouts/combinedTransactionTable';
 import logger from 'loglevel';
 
- 
 const RewardPointsCalculator = () => {
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
- 
-  //api call
+
+  const getLastThreeMonths = (transactions) => {
+    const months = transactions
+      .flatMap((customer) => customer.monthlyPoints)
+      .map((transaction) => {
+        const date = new Date(transaction.transactions[0].transactionDate);
+        return { month: date.getMonth() + 1, year: date.getFullYear() };
+      });
+
+    const uniqueMonths = Array.from(
+      new Set(months.map((m) => `${m.year}-${m.month}`))
+    ).map((dateStr) => {
+      const [year, month] = dateStr.split('-').map(Number);
+      return { month, year };
+    });
+
+    uniqueMonths.sort((a, b) => {
+      if (a.year !== b.year) return b.year - a.year;
+      return b.month - a.month;
+    });
+
+    return uniqueMonths.slice(0, 3);
+  };
+
+  const formatMonth = (date) => {
+    const options = { month: 'long' };
+    return new Intl.DateTimeFormat('en-US', options).format(
+      new Date(date.year, date.month - 1)
+    );
+  };
+
+  // API call
   useEffect(() => {
     const getTransactions = async () => {
       try {
@@ -27,26 +56,28 @@ const RewardPointsCalculator = () => {
         setLoading(false);
       }
     };
- 
+
     getTransactions();
   }, []);
- 
-  if (loading) return <p className='loader'></p>;
+
+  if (loading) return <p className='loader'>Loading...</p>;
   if (error) return <p className='error'>{error}</p>;
- 
+
+  const lastThreeMonths = getLastThreeMonths(transactions);
+
   return (
     <div className="container">
       <h2>Reward Points Summary</h2>
-      <h3>April</h3>
-      <TransactionTable transactions={transactions} month={4} />
-      <h3>May</h3>
-      <TransactionTable transactions={transactions} month={5} />
-      <h3>June</h3>
-      <TransactionTable transactions={transactions} month={6} />
-      <h3>Combined points for 3 months for years 2021, 2022, 2023</h3>
+      {lastThreeMonths.map((monthDate, index) => (
+        <div key={index}>
+          <h3>{formatMonth(monthDate)} {monthDate.year}</h3>
+          <TransactionTable transactions={transactions} month={monthDate.month} year={monthDate.year} />
+        </div>
+      ))}
+      <h3>Combined points for the last 3 months</h3>
       <CombinedTransactionTable transactions={transactions} />
     </div>
   );
 };
- 
+
 export default RewardPointsCalculator;
