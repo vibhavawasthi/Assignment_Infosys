@@ -1,58 +1,59 @@
 [
-  {
-    "transactionId": "T001",
-    "customerId": "C001",
-    "customerName": "John Doe",
-    "amountSpent": 120,
-    "transactionDate": "2021-04-15"
-  },
-  {
-    "transactionId": "T007",
-    "customerId": "C001",
-    "customerName": "John Doe",
-    "amountSpent": 120,
-    "transactionDate": "2022-04-15"
-  },
-  {
-    "transactionId": "T002",
-    "customerId": "C002",
-    "customerName": "Jane Smith",
-    "amountSpent": 75,
-    "transactionDate": "2023-04-16"
-  },
+  
   {
     "transactionId": "T003",
     "customerId": "C001",
     "customerName": "John Doe",
     "amountSpent": 150,
-    "transactionDate": "2022-05-01"
-  },
-  {
-    "transactionId": "T003",
-    "customerId": "C001",
-    "customerName": "John Doe",
-    "amountSpent": 150,
-    "transactionDate": "2023-05-01"
+    "transactionDate": "2024-01-01"
   },
   {
     "transactionId": "T004",
     "customerId": "C002",
     "customerName": "Jane Smith",
     "amountSpent": 200,
-    "transactionDate": "2023-05-05"
+    "transactionDate": "2023-12-05"
   },
   {
     "transactionId": "T005",
     "customerId": "C001",
     "customerName": "John Doe",
     "amountSpent": 90,
-    "transactionDate": "2023-06-07"
+    "transactionDate": "2023-12-07"
   },
   {
     "transactionId": "T006",
+    "customerId": "C003",
+    "customerName": "Shawn Mendis",
+    "amountSpent": 300,
+    "transactionDate": "2023-12-10"
+  },
+  {
+    "transactionId": "T001",
+    "customerId": "C003",
+    "customerName": "Shawn Mendis",
+    "amountSpent": 190,
+    "transactionDate": "2024-01-15"
+  },
+  {
+    "transactionId": "T007",
+    "customerId": "C005",
+    "customerName": "Tony Stark",
+    "amountSpent": 120,
+    "transactionDate": "2024-03-12"
+  },
+  {
+    "transactionId": "T009",
+    "customerId": "C004",
+    "customerName": "Peter Parker",
+    "amountSpent": 140,
+    "transactionDate": "2024-03-12"
+  },
+  {
+    "transactionId": "T002",
     "customerId": "C002",
     "customerName": "Jane Smith",
-    "amountSpent": 300,
-    "transactionDate": "2023-06-10"
+    "amountSpent": 75,
+    "transactionDate": "2024-01-16"
   }
 ]
