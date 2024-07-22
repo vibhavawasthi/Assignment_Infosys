@@ -1,5 +1,5 @@
-const { calculatePoints, processTransactions } = require('../calculatePoints');
-const { fetchTransactions } = require('../../utils/apiServices');
+const { calculatePoints, processTransactions } = require('../helpers/calculatePoints');
+const { fetchTransactions } = require('../../utils/services/apiServices');
 
 // Mock data for testing
 describe('calculatePoints function', () => {
