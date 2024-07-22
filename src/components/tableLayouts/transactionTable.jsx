@@ -1,10 +1,10 @@
 import React from 'react';
- 
-const TransactionTable = ({ transactions, month }) => {
+
+const TransactionTable = ({ transactions, month, year }) => {
   const filteredTransactions = transactions
     .flatMap((customer) => customer.monthlyPoints)
-    .filter((transaction) => transaction.month === month);
- 
+    .filter((transaction) => transaction.month === month && transaction.year === year);
+
   return (
     <table>
       <thead>
@@ -20,13 +20,13 @@ const TransactionTable = ({ transactions, month }) => {
       </thead>
       <tbody>
         {filteredTransactions.map((transaction) => (
-          <tr key={`${transaction.customerId}-${transaction.month}`}>
+          <tr key={`${transaction.customerId}-${transaction.month}-${transaction.year}`}>
             <td>{transaction.customerId}</td>
             <td>{transaction.customerName}</td>
             <td>{transaction.transactions.map((t) => t.transactionId).join(', ')}</td>
             <td>{transaction.transactions.map((t) => `$${t.amountSpent.toFixed(2)}`).join(', ')}</td>
             <td>{transaction.transactions.map((t) => t.transactionDate).join(', ')}</td>
-            <td>{transaction.transactions.map((t) => t.transactionDate.substring(0,4))}</td>
+            <td>{transaction.year}</td>
             <td>{transaction.points}</td>
           </tr>
         ))}
@@ -34,5 +34,5 @@ const TransactionTable = ({ transactions, month }) => {
     </table>
   );
 };
- 
-export default React.memo(TransactionTable);
+
+export default TransactionTable;
