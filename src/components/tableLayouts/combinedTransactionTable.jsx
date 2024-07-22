@@ -23,4 +23,4 @@ const CombinedTransactionTable = ({ transactions }) => {
   );
 };
  
-export default CombinedTransactionTable;
+export default React.memo(CombinedTransactionTable);
