@@ -94,7 +94,7 @@ calculatePoints function
 
 To modify the json-server data, make changes to the file in public/transactionData.json
 
-![App Screenshot](https://drive.google.com/uc?export=view&id=1CYKnDIsR95MlILzmpQgy6Lg6nTcukI6H)
+![App Screenshot](https://drive.google.com/uc?export=view&id=1Xpvkbc5DTyCpvDRtnIykszuI66WyMjM7)
 
 ### Flow Diagram
 ![App Screenshot](https://drive.google.com/uc?export=view&id=1CJqXOA0MNgqJiPn_l3-BgXZLNo4kwUdj)
