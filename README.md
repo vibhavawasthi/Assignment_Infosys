@@ -82,13 +82,13 @@ calculatePoints function
 
 ### Application loading state
 
-![App Screenshot](https://drive.google.com/uc?export=view&id=1CXG2PUsm6eicVFmwou_jnrWUKabu6lQN)
+![App Screenshot](https://drive.google.com/uc?export=view&id=1VHHDyIor65M3wWUaE2ls_RYtZ5P1iO2X)
 
 ### Build the app for production to the `build` folder.
 
 ### Application error 
 
-![App Screenshot](https://drive.google.com/uc?export=view&id=1CJK3i4V-wZUPkst3KuOmnIfPxOsbs4Cp)
+![App Screenshot](https://drive.google.com/uc?export=view&id=1wQAwnY08F9VcGfSqO3i804NpK64QeJi3)
 
 ## Sample data
 
