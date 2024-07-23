@@ -5,6 +5,10 @@ const TransactionTable = ({ transactions, month, year }) => {
     .flatMap((customer) => customer.monthlyPoints)
     .filter((transaction) => transaction.month === month && transaction.year === year);
 
+    const formatAmount = (amount) => {
+      return Number.isInteger(amount) ? amount : amount.toFixed(2);
+    };
+
   return (
     <table>
       <thead>
@@ -24,7 +28,7 @@ const TransactionTable = ({ transactions, month, year }) => {
             <td>{transaction.customerId}</td>
             <td>{transaction.customerName}</td>
             <td>{transaction.transactions.map((t) => t.transactionId).join(', ')}</td>
-            <td>{transaction.transactions.map((t) => `$${t.amountSpent.toFixed(2)}`).join(', ')}</td>
+            <td>{transaction.transactions.map((t) => `$${formatAmount(t.amountSpent)}`).join(', ')}</td>
             <td>{transaction.transactions.map((t) => t.transactionDate).join(', ')}</td>
             <td>{transaction.year}</td>
             <td>{transaction.points}</td>
