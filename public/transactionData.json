@@ -36,19 +36,20 @@
     "transactionDate": "2024-01-15"
   },
   {
-    "transactionId": "T007",
-    "customerId": "C005",
-    "customerName": "Tony Stark",
-    "amountSpent": 120,
-    "transactionDate": "2024-03-12"
-  },
-  {
     "transactionId": "T009",
     "customerId": "C004",
     "customerName": "Peter Parker",
     "amountSpent": 140,
-    "transactionDate": "2024-03-12"
+    "transactionDate": "2024-02-12"
   },
+  {
+    "transactionId": "T007",
+    "customerId": "C005",
+    "customerName": "Tony Stark",
+    "amountSpent": 120,
+    "transactionDate": "2024-02-12"
+  },
+  
   {
     "transactionId": "T002",
     "customerId": "C002",
