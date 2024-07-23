@@ -12,6 +12,8 @@ A customer receives 2 points for every dollar spent over $100 in each transactio
   
 Given a record of every transaction during a three month period, calculate the reward points earned for each customer per month and total. 
 
+**Assumption:- The record could be of many years so displaying the records of the latest three months in descending order and combined points as per customer ID for the last three months.**
+
 ## Running the project
 
 ### Clone the project from github repository
@@ -77,6 +79,8 @@ calculatePoints function
 ## Screen shots of application
 
 ### Application running state
+
+**Assumption:- The record could be of many years so displaying the records of the latest three months in descending order and combined points as per customer ID for the last three months.**
 
 ![App Screenshot](https://drive.google.com/uc?export=view&id=1xFvFC9qrBn2K3ni5ud1FbI8O_6yPyleH)
 
