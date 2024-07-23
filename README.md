@@ -78,7 +78,7 @@ calculatePoints function
 
 ### Application running state
 
-![App Screenshot](https://drive.google.com/uc?export=view&id=1CaEhL5LDnktUFLKAWHCudrsk9r4RtNzw)
+![App Screenshot](https://drive.google.com/uc?export=view&id=1xuIJ-49f1hORQsVtrUWI-prWdlVme2pO)
 
 ### Application loading state
 
