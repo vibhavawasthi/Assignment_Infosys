@@ -84,8 +84,6 @@ calculatePoints function
 
 ![App Screenshot](https://drive.google.com/uc?export=view&id=1VHHDyIor65M3wWUaE2ls_RYtZ5P1iO2X)
 
-### Build the app for production to the `build` folder.
-
 ### Application error 
 
 ![App Screenshot](https://drive.google.com/uc?export=view&id=1wQAwnY08F9VcGfSqO3i804NpK64QeJi3)
