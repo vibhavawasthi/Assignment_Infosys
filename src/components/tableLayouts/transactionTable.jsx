@@ -1,4 +1,5 @@
 import React from 'react';
+import { adjustPoints } from '../../utils/commonFunctions';
 
 const TransactionTable = ({ transactions, month, year }) => {
   const filteredTransactions = transactions
@@ -31,7 +32,7 @@ const TransactionTable = ({ transactions, month, year }) => {
             <td>{transaction.transactions.map((t) => `$${formatAmount(t.amountSpent)}`).join(', ')}</td>
             <td>{transaction.transactions.map((t) => t.transactionDate).join(', ')}</td>
             <td>{transaction.year}</td>
-            <td>{transaction.points}</td>
+            <td>{adjustPoints(transaction.points)}</td>
           </tr>
         ))}
       </tbody>
