@@ -27,3 +27,12 @@ export const getLastThreeMonths = (transactions) => {
       new Date(date.year, date.month - 1)
     );
   };
+
+  export const adjustPoints = (points) => {
+    const decimalPart = points % 1;
+    if (decimalPart <= 0.8) {
+      return Math.floor(points);
+    } else {
+      return Math.ceil(points);
+    }
+  };
