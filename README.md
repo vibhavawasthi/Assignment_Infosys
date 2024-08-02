@@ -38,7 +38,7 @@ The testcases file can be found in '/workspaces/Assign/src/RewardPointsCaluclato
 
  The code has passed below test cases
 
-![App Screenshot](https://drive.google.com/uc?export=view&id=1CaEhL5LDnktUFLKAWHCudrsk9r4RtNzw)
+![App Screenshot](https://drive.google.com/uc?export=view&id=1EveaUZve1ly0tv2Rtrz3Mw7058NfQnwO)
 calculatePoints function
 
     ✓ should handle negative amount
