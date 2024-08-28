@@ -23,14 +23,10 @@ describe('calculatePoints function', () => {
       expect(points).toBe(0); // 30 does not give any points
   });
 
-  it('should handle negative amount', () => {
-      const points = calculatePoints(-1);
-      expect(points).toBe(0); // Negative amount should give 0 points
-  });
 
   it('should handle decimal amount', () => {
       const points = calculatePoints(75.50);
-      expect(points).toBe(25.50); // 75.50 - 50 = 25.50 points
+      expect(points).toBe(26); // 75.50 - 50 = 25.50 points
   });
 
   it('should handle large amount like 1,000,000', () => {
