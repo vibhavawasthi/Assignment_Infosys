@@ -3,27 +3,33 @@ import { fetchTransactions } from '../utils/services/apiServices';
 import { processTransactions } from './helpers/calculatePoints';
 import TransactionTable from '../components/tableLayouts/transactionTable';
 import CombinedTransactionTable from '../components/tableLayouts/combinedTransactionTable';
+import DateFilter from '../components/filters/dateFilter';
+import Tabs from '../components/tabs/tabs';
 import logger from 'loglevel';
-import { formatMonth, getLastThreeMonths } from '../utils/commonFunctions';
+import { filterTransactionsByDate, formatMonth, getAllMonths, getLastQuarter } from '../utils/commonFunctions';
+import Header from '../components/header/header';
 
 const RewardPointsCalculator = () => {
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [activeTab, setActiveTab] = useState('allTransactions');
 
-  
+  // State for date filtering
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
+
+
   // API call
   useEffect(() => {
     const getTransactions = async () => {
       try {
         const data = await fetchTransactions();
-        logger.debug('Fetched transactions:', data);
         const processedData = processTransactions(data);
-        logger.debug('Processed transactions:', processedData);
         setTransactions(processedData);
       } catch (error) {
         logger.error('Failed to load transactions:', error);
-        setError('Failed to load transactions.');
+        setError('An error occurred while loading transactions. Please try again.');
       } finally {
         setLoading(false);
       }
@@ -32,22 +38,88 @@ const RewardPointsCalculator = () => {
     getTransactions();
   }, []);
 
-  if (loading) return <p className='loader'></p>;
+  if (loading) return <p className='loader'>Loading...</p>;
   if (error) return <p className='error'>{error}</p>;
 
-  const lastThreeMonths = getLastThreeMonths(transactions);
+  const allMonths = getAllMonths(transactions);
+  const lastQuarter = getLastQuarter(transactions);
+  const filteredTransactions = filterTransactionsByDate(transactions, startDate, endDate);
 
   return (
-    <div className="container">
-      <h2>Reward Points Summary</h2>
-      {lastThreeMonths.map((monthDate, index) => (
-        <div key={index}>
-          <h3>{formatMonth(monthDate)} {monthDate.year}</h3>
-          <TransactionTable transactions={transactions} month={monthDate.month} year={monthDate.year} />
-        </div>
-      ))}
-      <h3>Combined points for the last 3 months</h3>
-      <CombinedTransactionTable transactions={transactions} />
+    <div>
+      <Header />
+      <div className="container">
+
+
+        {/* Tab navigation */}
+        <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
+
+        {/* Render content based on active tab */}
+        {activeTab === 'allTransactions' && (
+          <div>
+            <h3>All Transactions</h3>
+
+            {/* Date Filter Component */}
+            <DateFilter
+              startDate={startDate}
+              endDate={endDate}
+              onStartDateChange={setStartDate}
+              onEndDateChange={setEndDate}
+            />
+
+            <TransactionTable transactions={filteredTransactions} />
+          </div>
+        )}
+
+        {activeTab === 'monthlyTransactions' && (
+          <>
+            <h3>Monthly Transactions</h3>
+            {allMonths.map((monthDate, index) => (
+              <div key={index}>
+                <h4>{formatMonth(monthDate)} {monthDate.year}</h4>
+                <TransactionTable transactions={transactions} month={monthDate.month} year={monthDate.year} />
+              </div>
+            ))}
+          </>
+        )}
+
+        {activeTab === 'quarterlyTransactions' && (
+          <>
+            {lastQuarter.length === 3 ? (
+              <>
+                <h3>Quarterly Transactions</h3>
+                {lastQuarter.map((monthDate, index) => (
+                  <div key={index}>
+                    <h4>{formatMonth(monthDate)} {monthDate.year}</h4>
+                    <TransactionTable transactions={transactions} month={monthDate.month} year={monthDate.year} />
+                  </div>
+                ))}
+              </>
+            ) : (
+              <p>No complete quarterly data available.</p>
+            )}
+
+
+          </>
+        )}
+
+        {activeTab === 'totalRewards' && (
+          <>
+
+            <>
+              <h3>Total Rewards</h3>
+
+              <div>
+
+                <CombinedTransactionTable transactions={transactions} />
+              </div>
+
+            </>
+          </>
+        )}
+
+
+      </div>
     </div>
   );
 };

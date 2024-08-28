@@ -1,15 +1,24 @@
 import React from 'react';
-import { adjustPoints } from '../../utils/commonFunctions';
-
+ 
 const TransactionTable = ({ transactions, month, year }) => {
   const filteredTransactions = transactions
     .flatMap((customer) => customer.monthlyPoints)
-    .filter((transaction) => transaction.month === month && transaction.year === year);
-
-    const formatAmount = (amount) => {
-      return Number.isInteger(amount) ? amount : amount.toFixed(2);
-    };
-
+    .filter((transaction) => {
+      if (month && year) {
+        return transaction.month === month && transaction.year === year;
+      }
+      return true; // Show all transactions if no month/year provided
+    });
+ 
+  const adjustPoints = (points) => {
+    const decimalPart = points % 1;
+    if (decimalPart <= 0.8) {
+      return Math.floor(points);
+    } else {
+      return Math.ceil(points);
+    }
+  };
+ 
   return (
     <table>
       <thead>
@@ -25,13 +34,13 @@ const TransactionTable = ({ transactions, month, year }) => {
       </thead>
       <tbody>
         {filteredTransactions.map((transaction) => (
-          <tr key={`${transaction.customerId}-${transaction.month}-${transaction.year}`}>
+          <tr key={`${transaction.customerId}-${transaction.month}`}>
             <td>{transaction.customerId}</td>
             <td>{transaction.customerName}</td>
             <td>{transaction.transactions.map((t) => t.transactionId).join(', ')}</td>
-            <td>{transaction.transactions.map((t) => `$${formatAmount(t.amountSpent)}`).join(', ')}</td>
+            <td>{transaction.transactions.map((t) => `$${t.amountSpent.toFixed(2)}`).join(', ')}</td>
             <td>{transaction.transactions.map((t) => t.transactionDate).join(', ')}</td>
-            <td>{transaction.year}</td>
+            <td>{transaction.transactions.map((t) => t.transactionDate.substring(0, 4)).join(', ')}</td>
             <td>{adjustPoints(transaction.points)}</td>
           </tr>
         ))}
@@ -39,5 +48,5 @@ const TransactionTable = ({ transactions, month, year }) => {
     </table>
   );
 };
-
+ 
 export default TransactionTable;

@@ -16,15 +16,22 @@ body {
   text-align: center;
   font-weight: 800;
 }
+
+.date-filter {
+  margin-bottom: 20px;
+}
+ 
+.date-filter label {
+  margin-right: 20px;
+}
  
 .container {
   width: 80%;
-  margin: 0 auto;
+  margin: 100px auto 0 auto;
   padding: 20px;
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  margin-top: 20px;
 }
  
 h2 {
@@ -82,6 +89,78 @@ tr:hover {
   height: 40px; /* Loader height */
   animation: spin 1s linear infinite; /* Animation properties */
 }
+
+/* Styles for the Tab Container */
+.tab-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+ 
+/* Styles for the Tab Buttons */
+.tab-buttons {
+  display: flex;
+  border-bottom: 2px solid #ccc;
+}
+ 
+.tab-buttons button {
+  flex: 1;
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+ 
+.tab-buttons button:hover {
+  background-color: #ddd;
+}
+ 
+.tab-buttons button.active {
+  background-color: #fff;
+  border-bottom: 2px solid #007bff;
+  font-weight: bold;
+}
+ 
+/* Styles for the Tab Content */
+.tab-content {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-top: none;
+  background-color: #fff;
+}
+ 
+.tab-content h3 {
+  margin-top: 0;
+}
+
+.header {
+  position: fixed; /* Fixes the header to the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #f8f8f8; 
+  z-index: 1000; /* Ensures the header stays above other content */
+}
+ 
+.logo {
+  width: 200px; /* Adjust size as needed */
+  height: auto;
+}
+ 
+.title {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-right: 10;
+}
+
+
  
 /* Keyframes for spinner animation */
 @keyframes spin {

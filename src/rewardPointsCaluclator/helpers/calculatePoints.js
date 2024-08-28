@@ -1,13 +1,9 @@
+// 2 points for every dollar over $100 + 1 point for every dollar between $50 and $100
+// 1 point for every dollar between $50 and $100
 const calculatePoints = (amount) => {
-  let points = 0;
-  if (amount > 100) {
-      points = (amount - 100) * 2 + 50; // 2 points for every dollar over $100 + 1 point for every dollar between $50 and $100
-  } else if (amount > 50) {
-      points = amount - 50; // 1 point for every dollar between $50 and $100
-  }
-  points = Math.round(points * 100) / 100; // Round to 2 decimal places
-  return points < 0 ? 0 : points; // Ensure points are not negative
-};
+    const points = amount > 100 ? (amount - 100) * 2 + 50 : amount > 50 ? amount - 50 : 0;
+    return Math.round(points);
+  };
 
 const processTransactions = (data) => {
   // Calculate points for each transaction
