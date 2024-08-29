@@ -14,7 +14,7 @@ const Tabs = ({ activeTab, setActiveTab }) => {
         className={activeTab === 'monthlyTransactions' ? 'active' : ''}
         onClick={() => setActiveTab('monthlyTransactions')}
       >
-        Monthly Transactions
+        Total Monthly Rewards
       </button>
       <button
         className={activeTab === 'totalRewards' ? 'active' : ''}

@@ -56,5 +56,26 @@
     "customerName": "Jane Smith",
     "amountSpent": 75,
     "transactionDate": "2024-01-16"
+  },
+  {
+    "transactionId": "T012",
+    "customerId": "C002",
+    "customerName": "Jane Smith",
+    "amountSpent": 200,
+    "transactionDate": "2024-04-07"
+  },
+  {
+    "transactionId": "T012",
+    "customerId": "C002",
+    "customerName": "Jane Smith",
+    "amountSpent": 200,
+    "transactionDate": "2024-03-07"
+  },
+  {
+    "transactionId": "T013",
+    "customerId": "C001",
+    "customerName": "John Doe",
+    "amountSpent": 90,
+    "transactionDate": "2024-03-07"
   }
 ]
