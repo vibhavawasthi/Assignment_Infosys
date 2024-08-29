@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { formatMonth } from '../../utils/commonFunctions';
  
 const TransactionTableMonthly = ({ transactions }) => {
   const [selectedMonth, setSelectedMonth] = useState('');
@@ -35,12 +36,6 @@ const TransactionTableMonthly = ({ transactions }) => {
       return b.month - a.month;
     });
  
-  const formatMonth = (month) => {
-    const options = { month: 'long' };
-    return new Intl.DateTimeFormat('en-US', options).format(
-      new Date(0, month - 1)
-    );
-  };
  
   const uniqueMonths = Array.from(
     new Set(aggregatedTransactions.map((transaction) => transaction.month))

@@ -20,11 +20,11 @@ body {
 .date-filter {
   margin-bottom: 20px;
 }
- 
+
 .date-filter label {
   margin-right: 20px;
 }
- 
+
 .container {
   width: 80%;
   margin: 100px auto 0 auto;
@@ -33,48 +33,49 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
- 
+
 h2 {
   text-align: center;
   color: #333;
 }
- 
+
 h3 {
   color: #555;
 }
- 
+
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
 }
- 
-th, td {
+
+th,
+td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
 }
- 
+
 th {
   background-color: #5a8391;
   color: #f7f7f7;
 }
 
 
- 
+
 tr:nth-child(even) {
   background-color: #f9f9f9;
 }
- 
+
 tr:hover {
   background-color: #f1f1f1;
 }
- 
+
 .transaction-table {
   margin-bottom: 40px;
 }
 
- 
+
 /* Loader styles */
 .loader {
   display: flex;
@@ -82,12 +83,18 @@ tr:hover {
   align-items: center;
   margin: 20% 50%;
   height: 100vh;
-  border: 4px solid rgba(0, 0, 0, 0.1); /* Loader border */
-  border-top: 4px solid #3498db; /* Loader top border color */
-  border-radius: 50%; /* Make it circular */
-  width: 40px; /* Loader width */
-  height: 40px; /* Loader height */
-  animation: spin 1s linear infinite; /* Animation properties */
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  /* Loader border */
+  border-top: 4px solid #3498db;
+  /* Loader top border color */
+  border-radius: 50%;
+  /* Make it circular */
+  width: 40px;
+  /* Loader width */
+  height: 40px;
+  /* Loader height */
+  animation: spin 1s linear infinite;
+  /* Animation properties */
 }
 
 /* Styles for the Tab Container */
@@ -96,13 +103,13 @@ tr:hover {
   flex-direction: column;
   margin-bottom: 20px;
 }
- 
+
 /* Styles for the Tab Buttons */
 .tab-buttons {
   display: flex;
   border-bottom: 2px solid #ccc;
 }
- 
+
 .tab-buttons button {
   flex: 1;
   padding: 10px 15px;
@@ -112,17 +119,17 @@ tr:hover {
   outline: none;
   transition: background-color 0.3s ease;
 }
- 
+
 .tab-buttons button:hover {
   background-color: #ddd;
 }
- 
+
 .tab-buttons button.active {
   background-color: #fff;
   border-bottom: 2px solid #007bff;
   font-weight: bold;
 }
- 
+
 /* Styles for the Tab Content */
 .tab-content {
   padding: 20px;
@@ -130,13 +137,14 @@ tr:hover {
   border-top: none;
   background-color: #fff;
 }
- 
+
 .tab-content h3 {
   margin-top: 0;
 }
 
 .header {
-  position: fixed; /* Fixes the header to the top */
+  position: fixed;
+  /* Fixes the header to the top */
   top: 0;
   left: 0;
   width: 100%;
@@ -144,15 +152,17 @@ tr:hover {
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  background-color: #f8f8f8; 
-  z-index: 1000; /* Ensures the header stays above other content */
+  background-color: #f8f8f8;
+  z-index: 1000;
+  /* Ensures the header stays above other content */
 }
- 
+
 .logo {
-  width: 200px; /* Adjust size as needed */
+  width: 200px;
+  /* Adjust size as needed */
   height: auto;
 }
- 
+
 .title {
   flex-grow: 1;
   text-align: center;
@@ -164,28 +174,37 @@ table {
   width: 100%;
   border-collapse: collapse;
 }
- 
-th, td {
+
+th,
+td {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
- 
+
 th button {
   background: none;
   border: none;
   font-size: 1rem;
   cursor: pointer;
 }
- 
+
 th button:focus {
   outline: none;
 }
 
 
- 
+
 /* Keyframes for spinner animation */
 @keyframes spin {
-  0% { transform: rotate(0deg); } /* Start rotation at 0 degrees */
-  100% { transform: rotate(360deg); } /* End rotation at 360 degrees */
+  0% {
+    transform: rotate(0deg);
+  }
+
+  /* Start rotation at 0 degrees */
+  100% {
+    transform: rotate(360deg);
+  }
+
+  /* End rotation at 360 degrees */
 }

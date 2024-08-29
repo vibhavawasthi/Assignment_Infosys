@@ -6,7 +6,7 @@ import CombinedTransactionTable from '../components/tableLayouts/combinedTransac
 import DateFilter from '../components/filters/dateFilter';
 import Tabs from '../components/tabs/tabs';
 import logger from 'loglevel';
-import { filterTransactionsByDate, formatMonth, getAllMonths, getLastQuarter } from '../utils/commonFunctions';
+import { filterTransactionsByDate } from '../utils/commonFunctions';
 import Header from '../components/header/header';
 import TransactionTableMonthly from '../components/tableLayouts/totalMonthlyRewards';
 
@@ -19,7 +19,6 @@ const RewardPointsCalculator = () => {
   // State for date filtering
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
-
 
   // API call
   useEffect(() => {
@@ -39,27 +38,21 @@ const RewardPointsCalculator = () => {
     getTransactions();
   }, []);
 
-  if (loading) return <p className='loader'>Loading...</p>;
+  if (loading) return <p className='loader'></p>;
   if (error) return <p className='error'>{error}</p>;
 
-  const allMonths = getAllMonths(transactions);
-  const lastQuarter = getLastQuarter(transactions);
   const filteredTransactions = filterTransactionsByDate(transactions, startDate, endDate);
 
   return (
     <div>
       <Header />
       <div className="container">
-
-
         {/* Tab navigation */}
         <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
-
         {/* Render content based on active tab */}
         {activeTab === 'allTransactions' && (
           <div>
             <h3>All Transactions</h3>
-
             {/* Date Filter Component */}
             <DateFilter
               startDate={startDate}
@@ -67,7 +60,6 @@ const RewardPointsCalculator = () => {
               onStartDateChange={setStartDate}
               onEndDateChange={setEndDate}
             />
-
             <TransactionTable transactions={filteredTransactions} />
           </div>
         )}
@@ -75,28 +67,20 @@ const RewardPointsCalculator = () => {
         {activeTab === 'monthlyTransactions' && (
           <>
             <h3>Monthly Transactions</h3>
-            
-                <TransactionTableMonthly transactions={transactions} month={true} />
-          
+            <TransactionTableMonthly transactions={transactions} month={true} />
           </>
         )}
 
         {activeTab === 'totalRewards' && (
           <>
-
             <>
               <h3>Total Rewards</h3>
-
               <div>
-
                 <CombinedTransactionTable transactions={transactions} />
               </div>
-
             </>
           </>
         )}
-
-
       </div>
     </div>
   );
