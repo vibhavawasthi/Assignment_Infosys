@@ -99,4 +99,4 @@ const TransactionTableMonthly = ({ transactions }) => {
   );
 };
  
-export default TransactionTableMonthly;
+export default React.memo(TransactionTableMonthly);

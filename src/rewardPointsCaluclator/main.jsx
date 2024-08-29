@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { fetchTransactions } from '../utils/services/apiServices';
 import { processTransactions } from './helpers/calculatePoints';
 import TransactionTable from '../components/tableLayouts/transactionTable';
-import CombinedTransactionTable from '../components/tableLayouts/combinedTransactionTable';
+import LastThreeMonthRewardsTable from '../components/tableLayouts/lastThreeMonthRewardsTable';
 import DateFilter from '../components/filters/dateFilter';
 import Tabs from '../components/tabs/tabs';
 import logger from 'loglevel';
@@ -76,7 +76,7 @@ const RewardPointsCalculator = () => {
             <>
               <h3>Total Rewards</h3>
               <div>
-                <CombinedTransactionTable transactions={transactions} />
+                <LastThreeMonthRewardsTable transactions={transactions} />
               </div>
             </>
           </>

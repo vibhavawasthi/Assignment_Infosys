@@ -53,4 +53,4 @@ const TransactionTable = ({ transactions }) => {
   );
 };
  
-export default TransactionTable;
+export default React.memo(TransactionTable);

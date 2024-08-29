@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { getLastThreeMonths } from '../../utils/commonFunctions';
  
-const CombinedTransactionTable = ({ transactions }) => {
-  // Get the last three months
+const LastThreeMonthRewardsTable = ({ transactions }) => {
   const [sortConfig, setSortConfig] = useState({ key: 'totalPoints', direction: 'desc' });
  
   // Get the last three months
@@ -84,4 +83,4 @@ const CombinedTransactionTable = ({ transactions }) => {
     </table>
   );
 };
-export default React.memo(CombinedTransactionTable);
+export default React.memo(LastThreeMonthRewardsTable);
