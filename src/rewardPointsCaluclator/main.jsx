@@ -8,6 +8,7 @@ import Tabs from '../components/tabs/tabs';
 import logger from 'loglevel';
 import { filterTransactionsByDate, formatMonth, getAllMonths, getLastQuarter } from '../utils/commonFunctions';
 import Header from '../components/header/header';
+import TransactionTableMonthly from '../components/tableLayouts/totalMonthlyRewards';
 
 const RewardPointsCalculator = () => {
   const [transactions, setTransactions] = useState([]);
@@ -74,32 +75,9 @@ const RewardPointsCalculator = () => {
         {activeTab === 'monthlyTransactions' && (
           <>
             <h3>Monthly Transactions</h3>
-            {allMonths.map((monthDate, index) => (
-              <div key={index}>
-                <h4>{formatMonth(monthDate)} {monthDate.year}</h4>
-                <TransactionTable transactions={transactions} month={monthDate.month} year={monthDate.year} />
-              </div>
-            ))}
-          </>
-        )}
-
-        {activeTab === 'quarterlyTransactions' && (
-          <>
-            {lastQuarter.length === 3 ? (
-              <>
-                <h3>Quarterly Transactions</h3>
-                {lastQuarter.map((monthDate, index) => (
-                  <div key={index}>
-                    <h4>{formatMonth(monthDate)} {monthDate.year}</h4>
-                    <TransactionTable transactions={transactions} month={monthDate.month} year={monthDate.year} />
-                  </div>
-                ))}
-              </>
-            ) : (
-              <p>No complete quarterly data available.</p>
-            )}
-
-
+            
+                <TransactionTableMonthly transactions={transactions} month={true} />
+          
           </>
         )}
 

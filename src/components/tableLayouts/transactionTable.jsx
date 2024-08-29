@@ -1,23 +1,25 @@
 import React from 'react';
+import { formatMonth } from '../../utils/commonFunctions';
  
-const TransactionTable = ({ transactions, month, year }) => {
-  const filteredTransactions = transactions
-    .flatMap((customer) => customer.monthlyPoints)
-    .filter((transaction) => {
-      if (month && year) {
-        return transaction.month === month && transaction.year === year;
-      }
-      return true; // Show all transactions if no month/year provided
-    });
+const TransactionTable = ({ transactions }) => {
+  // Flatten transactions and add the month and year to each transaction
+  const allTransactions = transactions.flatMap((customer) =>
+    customer.monthlyPoints.flatMap((pointData) =>
+      pointData.transactions.map((transaction) => ({
+        customerId: customer.customerId,
+        customerName: customer.customerName,
+        month: pointData.month,
+        year: new Date(transaction.transactionDate).getFullYear(),
+        ...transaction,
+      }))
+    )
+  );
  
-  const adjustPoints = (points) => {
-    const decimalPart = points % 1;
-    if (decimalPart <= 0.8) {
-      return Math.floor(points);
-    } else {
-      return Math.ceil(points);
-    }
-  };
+  // Sort transactions by year and month in descending order
+  allTransactions.sort((a, b) => {
+    if (a.year !== b.year) return b.year - a.year;
+    return b.month - a.month;
+  });
  
   return (
     <table>
@@ -28,20 +30,22 @@ const TransactionTable = ({ transactions, month, year }) => {
           <th>Transaction ID</th>
           <th>Amount Spent</th>
           <th>Transaction Date</th>
-          <th>Transaction Year</th>
+          <th>Month</th>
+          <th>Year</th>
           <th>Points</th>
         </tr>
       </thead>
       <tbody>
-        {filteredTransactions.map((transaction) => (
-          <tr key={`${transaction.customerId}-${transaction.month}`}>
+        {allTransactions.map((transaction, index) => (
+          <tr key={`${transaction.customerId}-${index}`}>
             <td>{transaction.customerId}</td>
             <td>{transaction.customerName}</td>
-            <td>{transaction.transactions.map((t) => t.transactionId).join(', ')}</td>
-            <td>{transaction.transactions.map((t) => `$${t.amountSpent.toFixed(2)}`).join(', ')}</td>
-            <td>{transaction.transactions.map((t) => t.transactionDate).join(', ')}</td>
-            <td>{transaction.transactions.map((t) => t.transactionDate.substring(0, 4)).join(', ')}</td>
-            <td>{adjustPoints(transaction.points)}</td>
+            <td>{transaction.transactionId}</td>
+            <td>${transaction.amountSpent.toFixed(2)}</td>
+            <td>{transaction.transactionDate}</td>
+            <td>{formatMonth(transaction.month)}</td>
+            <td>{transaction.year}</td>
+            <td>{transaction.points}</td>
           </tr>
         ))}
       </tbody>

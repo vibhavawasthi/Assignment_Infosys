@@ -17,16 +17,10 @@ const Tabs = ({ activeTab, setActiveTab }) => {
         Monthly Transactions
       </button>
       <button
-        className={activeTab === 'quarterlyTransactions' ? 'active' : ''}
-        onClick={() => setActiveTab('quarterlyTransactions')}
-      >
-        Quarterly Transactions
-      </button>
-      <button
         className={activeTab === 'totalRewards' ? 'active' : ''}
         onClick={() => setActiveTab('totalRewards')}
       >
-        Total Rewards Customer Wise
+        Total Rewards (Last Three Months)
       </button>
       </div>
     </div>

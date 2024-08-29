@@ -160,6 +160,28 @@ tr:hover {
   margin-right: 10;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+ 
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+ 
+th button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+ 
+th button:focus {
+  outline: none;
+}
+
 
  
 /* Keyframes for spinner animation */
