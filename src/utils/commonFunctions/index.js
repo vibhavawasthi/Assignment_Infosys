@@ -1,3 +1,5 @@
+import { useMemo } from "react";
+
 // Helper function to get the last three unique months from the transactions data
  export const getLastThreeMonths = (transactions) => {
     const months = transactions

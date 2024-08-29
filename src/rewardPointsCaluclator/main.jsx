@@ -86,4 +86,4 @@ const RewardPointsCalculator = () => {
   );
 };
 
-export default RewardPointsCalculator;
+export default React.memo(RewardPointsCalculator);
