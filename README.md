@@ -38,7 +38,6 @@ The testcases file can be found in '/workspaces/Assign/src/RewardPointsCaluclato
 
  The code has passed below test cases
 
-![App Screenshot](https://drive.google.com/uc?export=view&id=1EveaUZve1ly0tv2Rtrz3Mw7058NfQnwO)
 calculatePoints function
 
     ✓ should handle negative amount
@@ -82,7 +81,10 @@ calculatePoints function
 
 **Assumption:- The record could be of many years so displaying the records of the latest three months in descending order and combined points as per customer ID for the last three months.**
 
-![App Screenshot](https://drive.google.com/uc?export=view&id=1xFvFC9qrBn2K3ni5ud1FbI8O_6yPyleH)
+![App Screenshot](https://drive.google.com/uc?export=view&id=1yLyPxdC7PHHoK83kJaPXGP7DPaTLJIqJ)
+![App Screenshot](https://drive.google.com/uc?export=view&id=1ygGe4NAGDnbBc8efQJLu-oXLD6L-mUXv)
+![App Screenshot](https://drive.google.com/uc?export=view&id=1-1hF5Kazc9nstZ8ZWP0T-hYqpmIZp6Yi)
+
 
 ### Application loading state
 
