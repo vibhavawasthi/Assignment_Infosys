@@ -1,41 +1,16 @@
 import React, { useState } from 'react';
 import { formatMonth } from '../../utils/commonFunctions';
+import { aggregateTransactions, filterAndSortTransactions } from './helpers/tableLayoutHelpers';
  
 const TransactionTableMonthly = ({ transactions }) => {
   const [selectedMonth, setSelectedMonth] = useState('');
   const [selectedYear, setSelectedYear] = useState('');
  
   // Aggregate transactions by customer, month, and year
-  const aggregatedTransactions = transactions.flatMap((customer) =>
-    customer.monthlyPoints.map((pointData) => {
-      const totalPoints = pointData.transactions.reduce(
-        (acc, transaction) => acc + transaction.points,
-        0
-      );
-      const year = new Date(pointData.transactions[0].transactionDate).getFullYear();
-      return {
-        customerId: customer.customerId,
-        customerName: customer.customerName,
-        month: pointData.month,
-        year,
-        totalPoints,
-      };
-    })
-  );
- 
+  const aggregatedTransactions = aggregateTransactions(transactions);
+
   // Sort transactions by year and month in descending order
-  const filteredTransactions = aggregatedTransactions
-    .filter((transaction) => {
-      return (
-        (selectedMonth ? transaction.month === parseInt(selectedMonth) : true) &&
-        (selectedYear ? transaction.year === parseInt(selectedYear) : true)
-      );
-    })
-    .sort((a, b) => {
-      if (a.year !== b.year) return b.year - a.year;
-      return b.month - a.month;
-    });
- 
+  const filteredTransactions = filterAndSortTransactions(aggregatedTransactions, selectedMonth, selectedYear)
  
   const uniqueMonths = Array.from(
     new Set(aggregatedTransactions.map((transaction) => transaction.month))

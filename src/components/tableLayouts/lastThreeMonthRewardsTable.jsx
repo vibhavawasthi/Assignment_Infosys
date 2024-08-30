@@ -1,47 +1,12 @@
 import React, { useState } from 'react';
-import { getLastThreeMonths } from '../../utils/commonFunctions';
+import { customerRewards, sortCustomerRewards } from './helpers/tableLayoutHelpers';
  
 const LastThreeMonthRewardsTable = ({ transactions }) => {
   const [sortConfig, setSortConfig] = useState({ key: 'totalPoints', direction: 'desc' });
- 
-  // Get the last three months
-  const lastThreeMonths = getLastThreeMonths(transactions);
- 
-  // Filter and aggregate transactions by customer for the last three months
-  const customerRewards = transactions.map((customer) => {
-    const totalPoints = customer.monthlyPoints.reduce((acc, pointData) => {
-      const transactionDate = new Date(
-        pointData.transactions[0].transactionDate
-      );
-      const month = transactionDate.getMonth() + 1;
-      const year = transactionDate.getFullYear();
- 
-      const isInLastThreeMonths = lastThreeMonths.some(
-        (monthYear) =>
-          monthYear.month === month && monthYear.year === year
-      );
- 
-      return isInLastThreeMonths ? acc + pointData.points : acc;
-    }, 0);
- 
-    return {
-      customerId: customer.customerId,
-      customerName: customer.customerName,
-      totalPoints,
-    };
-  });
- 
+  const customerRewardsData = customerRewards(transactions);
+  const sortedCustomerRewards = sortCustomerRewards(customerRewardsData, sortConfig);
+
   // Sorting logic
-  const sortedCustomerRewards = customerRewards.sort((a, b) => {
-    if (a[sortConfig.key] < b[sortConfig.key]) {
-      return sortConfig.direction === 'asc' ? -1 : 1;
-    }
-    if (a[sortConfig.key] > b[sortConfig.key]) {
-      return sortConfig.direction === 'asc' ? 1 : -1;
-    }
-    return 0;
-  });
- 
   const requestSort = (key) => {
     let direction = 'asc';
     if (sortConfig.key === key && sortConfig.direction === 'asc') {
@@ -49,6 +14,7 @@ const LastThreeMonthRewardsTable = ({ transactions }) => {
     }
     setSortConfig({ key, direction });
   };
+ 
  
   return (
     <table>

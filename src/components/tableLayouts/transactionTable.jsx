@@ -1,19 +1,10 @@
 import React from 'react';
 import { formatMonth } from '../../utils/commonFunctions';
+import { aggregateAllTransactions } from './helpers/tableLayoutHelpers';
  
 const TransactionTable = ({ transactions }) => {
   // Flatten transactions and add the month and year to each transaction
-  const allTransactions = transactions.flatMap((customer) =>
-    customer.monthlyPoints.flatMap((pointData) =>
-      pointData.transactions.map((transaction) => ({
-        customerId: customer.customerId,
-        customerName: customer.customerName,
-        month: pointData.month,
-        year: new Date(transaction.transactionDate).getFullYear(),
-        ...transaction,
-      }))
-    )
-  );
+  const allTransactions = aggregateAllTransactions(transactions);
  
   // Sort transactions by year and month in descending order
   allTransactions.sort((a, b) => {

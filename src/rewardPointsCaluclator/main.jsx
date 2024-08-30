@@ -15,7 +15,6 @@ const RewardPointsCalculator = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [activeTab, setActiveTab] = useState('allTransactions');
-
   // State for date filtering
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
