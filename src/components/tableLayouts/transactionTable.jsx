@@ -1,6 +1,5 @@
 import React from 'react';
-import { formatMonth } from '../../utils/commonFunctions';
-import { aggregateAllTransactions } from './helpers/tableLayoutHelpers';
+import { aggregateAllTransactions, formatMonth } from '../../utils/commonFunctions';
  
 const TransactionTable = ({ transactions }) => {
   // Flatten transactions and add the month and year to each transaction

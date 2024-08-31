@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { customerRewards, sortCustomerRewards } from './helpers/tableLayoutHelpers';
+import { customerRewards, sortCustomerRewards } from '../../utils/commonFunctions';
+
  
 const LastThreeMonthRewardsTable = ({ transactions }) => {
   const [sortConfig, setSortConfig] = useState({ key: 'totalPoints', direction: 'desc' });

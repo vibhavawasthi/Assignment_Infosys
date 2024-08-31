@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { formatMonth } from '../../utils/commonFunctions';
-import { aggregateTransactions, filterAndSortTransactions } from './helpers/tableLayoutHelpers';
- 
+import { aggregateTransactions, filterAndSortTransactions, formatMonth } from '../../utils/commonFunctions';
+
 const TransactionTableMonthly = ({ transactions }) => {
   const [selectedMonth, setSelectedMonth] = useState('');
   const [selectedYear, setSelectedYear] = useState('');

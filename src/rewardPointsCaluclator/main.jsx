@@ -9,17 +9,22 @@ import logger from 'loglevel';
 import { filterTransactionsByDate } from '../utils/commonFunctions';
 import Header from '../components/header/header';
 import TransactionTableMonthly from '../components/tableLayouts/totalMonthlyRewards';
-
+ 
 const RewardPointsCalculator = () => {
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [activeTab, setActiveTab] = useState('allTransactions');
-  // State for date filtering
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
-
-  // API call
+ 
+  // Tab data
+  const tabs = [
+    { id: 'allTransactions', label: 'All Transactions' },
+    { id: 'monthlyTransactions', label: 'Total Monthly Rewards' },
+    { id: 'totalRewards', label: 'Total Rewards (Last Three Months)' },
+  ];
+ 
   useEffect(() => {
     const getTransactions = async () => {
       try {
@@ -33,26 +38,23 @@ const RewardPointsCalculator = () => {
         setLoading(false);
       }
     };
-
+ 
     getTransactions();
   }, []);
-
-  if (loading) return <p className='loader'></p>;
+ 
+  if (loading) return <p className='loader'>Loading...</p>;
   if (error) return <p className='error'>{error}</p>;
-
+ 
   const filteredTransactions = filterTransactionsByDate(transactions, startDate, endDate);
-
+ 
   return (
     <div>
       <Header />
       <div className="container">
-        {/* Tab navigation */}
-        <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
-        {/* Render content based on active tab */}
+        <Tabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
         {activeTab === 'allTransactions' && (
           <div>
             <h3>All Transactions</h3>
-            {/* Date Filter Component */}
             <DateFilter
               startDate={startDate}
               endDate={endDate}
@@ -62,27 +64,21 @@ const RewardPointsCalculator = () => {
             <TransactionTable transactions={filteredTransactions} />
           </div>
         )}
-
         {activeTab === 'monthlyTransactions' && (
-          <>
+          <div>
             <h3>Monthly Transactions</h3>
             <TransactionTableMonthly transactions={transactions} month={true} />
-          </>
+          </div>
         )}
-
         {activeTab === 'totalRewards' && (
-          <>
-            <>
-              <h3>Total Rewards</h3>
-              <div>
-                <LastThreeMonthRewardsTable transactions={transactions} />
-              </div>
-            </>
-          </>
+          <div>
+            <h3>Total Rewards</h3>
+            <LastThreeMonthRewardsTable transactions={transactions} />
+          </div>
         )}
       </div>
     </div>
   );
 };
-
+ 
 export default React.memo(RewardPointsCalculator);
