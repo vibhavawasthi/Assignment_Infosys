@@ -1,9 +1,9 @@
 import React from 'react';
-import { aggregateAllTransactions, formatMonth } from '../../utils/commonFunctions';
+import { aggregateTransactions, formatMonth } from '../../utils/commonFunctions';
  
 const TransactionTable = ({ transactions }) => {
   // Flatten transactions and add the month and year to each transaction
-  const allTransactions = aggregateAllTransactions(transactions);
+  const allTransactions = aggregateTransactions(transactions, { aggregateAll: true });;
  
   // Sort transactions by year and month in descending order
   allTransactions.sort((a, b) => {

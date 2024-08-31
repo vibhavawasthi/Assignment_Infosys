@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { customerRewards, sortCustomerRewards } from '../../utils/commonFunctions';
+import { getCustomerRewardsForLastThreeMonths, sortCustomerRewards } from '../../utils/commonFunctions';
 
  
 const LastThreeMonthRewardsTable = ({ transactions }) => {
   const [sortConfig, setSortConfig] = useState({ key: 'totalPoints', direction: 'desc' });
-  const customerRewardsData = customerRewards(transactions);
+  const customerRewardsData = getCustomerRewardsForLastThreeMonths(transactions);
   const sortedCustomerRewards = sortCustomerRewards(customerRewardsData, sortConfig);
 
   // Sorting logic
