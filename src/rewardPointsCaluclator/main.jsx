@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { fetchTransactions } from '../utils/services/apiServices';
-import { processTransactions } from './helpers/calculatePoints';
+import { processTransactions } from './calculatePoints';
 import TransactionTable from '../components/tableLayouts/transactionTable';
 import LastThreeMonthRewardsTable from '../components/tableLayouts/lastThreeMonthRewardsTable';
 import DateFilter from '../components/filters/dateFilter';

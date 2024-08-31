@@ -1,13 +1,8 @@
 // Calculate reward points based on amount spent
 const calculatePoints = (amount) => {
-    if (amount > 100) {
-        return Math.round((amount - 100) * 2 + 50);
-    } else if (amount > 50) {
-        return Math.round(amount - 50);
-    }
-    return 0;
+    return isNaN(amount) ? 0 : Math.round(amount > 100 ? (amount - 100) * 2 + 50 : amount > 50 ? amount - 50 : 0);
 };
- 
+
 // Process transactions to calculate points and aggregate data
 const processTransactions = (data) => {
     // Calculate points for each transaction
@@ -15,14 +10,14 @@ const processTransactions = (data) => {
         ...transaction,
         points: calculatePoints(transaction.amountSpent),
     }));
- 
+
     // Group transactions by customer, year, and month
     const customerPoints = transactionsWithPoints.reduce((acc, transaction) => {
         const date = new Date(transaction.transactionDate);
         const month = date.getMonth() + 1;
         const year = date.getFullYear();
         const key = `${transaction.customerId}-${year}-${month}`;
- 
+
         if (!acc[key]) {
             acc[key] = {
                 customerId: transaction.customerId,
@@ -37,7 +32,7 @@ const processTransactions = (data) => {
         acc[key].transactions.push(transaction);
         return acc;
     }, {});
- 
+
     // Summarize total points per customer
     const totalPoints = Object.values(customerPoints).reduce((acc, transaction) => {
         if (!acc[transaction.customerId]) {
@@ -52,8 +47,8 @@ const processTransactions = (data) => {
         acc[transaction.customerId].monthlyPoints.push(transaction);
         return acc;
     }, {});
- 
+
     return Object.values(totalPoints);
 };
- 
+
 module.exports = { calculatePoints, processTransactions };

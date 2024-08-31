@@ -1,5 +1,5 @@
-const { calculatePoints, processTransactions } = require('../helpers/calculatePoints');
-const { fetchTransactions } = require('../../utils/services/apiServices');
+const { calculatePoints, processTransactions } = require('./rewardPointsCaluclator/calculatePoints');
+const { fetchTransactions } = require('./utils/services/apiServices');
 const { act } = require('@testing-library/react');  // Import act
  
 // Mock data for testing
