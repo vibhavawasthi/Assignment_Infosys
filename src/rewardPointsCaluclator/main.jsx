@@ -49,7 +49,10 @@ const RewardPointsCalculator = () => {
  
   return (
     <div>
-      <Header />
+      <Header
+        logoSrc="/assets/OIP.jpg"
+        title="Custom Header Title"
+      />
       <div className="container">
         <Tabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
         {activeTab === 'allTransactions' && (

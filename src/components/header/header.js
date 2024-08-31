@@ -1,10 +1,10 @@
 import React from 'react';
  
-const Header = () => {
+const Header = ({ logoSrc = '/assets/OIP.jpg', title = 'Customer Transactions and Rewards' }) => {
   return (
     <header className="header">
-      <img src="/assets/OIP.jpg" alt="Logo" className="logo" />
-      <h1 className="title">Customer Transactions and Rewards</h1>
+      <img src={logoSrc} alt="Logo" className="logo" />
+      <h1 className="title">{title}</h1>
     </header>
   );
 };
